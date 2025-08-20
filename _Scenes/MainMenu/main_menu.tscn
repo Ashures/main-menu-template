@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyms3l0oag15b"]
+
+[ext_resource type="Theme" uid="uid://dupjorcu0y8i2" path="res://_Scenes/MainMenu/main_menu.tres" id="1_0jo2a"]
+[ext_resource type="Script" uid="uid://qlelc8ykdgfh" path="res://_Scenes/MainMenu/main_menu.gd" id="1_4t57g"]
+[ext_resource type="Script" uid="uid://b010t2j60m25y" path="res://Scripts/button.gd" id="3_7lg4d"]
+
+[sub_resource type="Gradient" id="Gradient_30mua"]
+offsets = PackedFloat32Array(0, 0.5, 0.993506)
+colors = PackedColorArray(0.6, 0.913333, 1, 1, 0.752734, 0.730881, 0.997852, 1, 1, 0.69, 0.963833, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0jo2a"]
+gradient = SubResource("Gradient_30mua")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="GDScript" id="GDScript_7lg4d"]
+script/source = "extends CustomButton
+
+func press_button() -> void:
+	print('play')
+"
+
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("buttons")]
+script = ExtResource("1_4t57g")
+buttons = [NodePath("TitlePage/Options/PlayButtonContainer/PlayButton"), NodePath("TitlePage/Options/SettingsButtonContainer/SettingsButton"), NodePath("TitlePage/Options/ExitButtonContainer/ExitButton")]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_0jo2a")
+
+[node name="TitlePage" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="CenterContainer" parent="TitlePage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="TitlePage/TitleContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_0jo2a")
+text = "TITLE"
+
+[node name="Options" type="VBoxContainer" parent="TitlePage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -50
+
+[node name="PlayButtonContainer" type="Control" parent="TitlePage/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButton" type="Button" parent="TitlePage/Options/PlayButtonContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0jo2a")
+disabled = true
+text = "PLAY"
+script = SubResource("GDScript_7lg4d")
+button_id = "play"
+
+[node name="SettingsButtonContainer" type="Control" parent="TitlePage/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsButton" type="Button" parent="TitlePage/Options/SettingsButtonContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0jo2a")
+disabled = true
+text = "SETTINGS"
+script = ExtResource("3_7lg4d")
+button_id = "settings"
+
+[node name="ExitButtonContainer" type="Control" parent="TitlePage/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="Button" parent="TitlePage/Options/ExitButtonContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0jo2a")
+disabled = true
+text = "EXIT"
+script = ExtResource("3_7lg4d")
+button_id = "exit"

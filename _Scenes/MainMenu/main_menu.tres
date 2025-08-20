@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dupjorcu0y8i2"]
+
+[ext_resource type="FontFile" uid="uid://b8igib100n81a" path="res://Assets/Fonts/CalSans-Regular.ttf" id="1_clxry"]
+[ext_resource type="StyleBox" uid="uid://bsdhtjsjuj6of" path="res://_Scenes/MainMenu/disabled_button_box.tres" id="2_6p003"]
+[ext_resource type="StyleBox" uid="uid://e7kddmjrk7iv" path="res://_Scenes/MainMenu/default_button_box.tres" id="2_h5oid"]
+
+[resource]
+Button/colors/font_disabled_color = Color(0.72, 0.782667, 0.8, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 54
+Button/fonts/font = ExtResource("1_clxry")
+Button/styles/disabled = ExtResource("2_6p003")
+Button/styles/focus = ExtResource("2_h5oid")
+Button/styles/hover = ExtResource("2_h5oid")
+Button/styles/normal = ExtResource("2_h5oid")
+Button/styles/pressed = ExtResource("2_h5oid")
+Label/colors/font_outline_color = Color(0.8, 0.53, 0.44, 1)
+Label/colors/font_shadow_color = Color(0.6, 0.33, 0.24, 1)
+Label/constants/outline_size = 30
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 13
+Label/constants/shadow_outline_size = 30
+Label/font_sizes/font_size = 200
+Label/fonts/font = ExtResource("1_clxry")
